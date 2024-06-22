@@ -2,9 +2,8 @@ import os
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from openai import OpenAI
-from dotenv import load_dotenv
-load_dotenv()
-os.environ['OPENAI_API_KEY'] = os.getenv("API_KEY")
+
+os.environ['OPENAI_API_KEY'] = API_KEY
 client = OpenAI()
 
 # Set your OpenAI API key
