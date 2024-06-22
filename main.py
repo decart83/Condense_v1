@@ -1,10 +1,11 @@
 import os
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
-import openai
+from openai import OpenAI
+client = OpenAI(api_key = 'sk-proj-SLBuQQ1KZ5bGO9Gt2kOeT3BlbkFJvJqY3DZDWbwXoM281DhI')
 
 # Set your OpenAI API key
-openai.api_key = 'sk-proj-SLBuQQ1KZ5bGO9Gt2kOeT3BlbkFJvJqY3DZDWbwXoM281DhI'
+
 
 
 st.title("Condense Learning")
@@ -33,7 +34,7 @@ condense_prompt = "Summarize the book " + str(topic) + " in " + str(text_length)
 st.text("")
 if st.button('Condense It!'):
     with st.spinner("thinking..."):
-        result = openai.ChatCompletion.create(
+        result = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
