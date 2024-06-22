@@ -2,7 +2,12 @@ import os
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from openai import OpenAI
-client = OpenAI(api_key = 'sk-proj-SLBuQQ1KZ5bGO9Gt2kOeT3BlbkFJvJqY3DZDWbwXoM281DhI')
+
+os.environ['OPENAI_API_KEY'] = 'sk-proj-NiU7UWn24sHd6XeVyku2T3BlbkFJSZ1pV9ZBk4wn5cc7wUzW'
+
+
+
+client = OpenAI()
 
 # Set your OpenAI API key
 
@@ -42,7 +47,8 @@ if st.button('Condense It!'):
             ],
             max_tokens=4096,
             temperature=0.7)
-        response = result['choices'][0]['message']['content']
+        response = result.choices[0].message.content
+
 
 
 
