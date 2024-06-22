@@ -49,9 +49,6 @@ if st.button('Condense It!'):
             temperature=0.7)
         response = result.choices[0].message.content
 
-
-
-
     with st.chat_message('AI'):
         st.markdown(response)
 
@@ -75,7 +72,7 @@ if prompt is not None and prompt != "":
         st.markdown(prompt)
 
     with st.spinner("thinking..."):
-        result = openai.ChatCompletion.create(
+        result = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
@@ -83,7 +80,7 @@ if prompt is not None and prompt != "":
             ],
             max_tokens=50,
             temperature=0.7)
-        response = result['choices'][0]['message']['content']
+        response = result.choices[0].message.content
 
     with st.chat_message('AI'):
         st.markdown(response)
