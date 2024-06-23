@@ -5,8 +5,6 @@ import openai
 
 openai.api_key = st.secrets["API_KEY_Fabio"]
 
-client = OpenAI()
-
 # Set your OpenAI API key
 
 
@@ -38,7 +36,7 @@ condense_prompt = "Summarize the book " + str(topic) + " in " + str(text_length)
 st.text("")
 if st.button('Condense It!'):
     with st.spinner("thinking..."):
-        result = client.chat.completions.create(
+        result = openai.chat.completions.create(
             model="gpt-4o",
             messages=[
                 {"role": "system", "content": "Act as a literary editor, condensing the text while preserving its core narrative and essence."},
@@ -71,7 +69,7 @@ if prompt is not None and prompt != "":
         st.markdown(prompt)
 
     with st.spinner("thinking..."):
-        result = client.chat.completions.create(
+        result = openai.chat.completions.create(
             model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
