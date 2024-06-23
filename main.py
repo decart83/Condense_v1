@@ -38,7 +38,7 @@ st.text("")
 if st.button('Condense It!'):
     with st.spinner("thinking..."):
         result = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="GPT-4o",
             messages=[
                 {"role": "system", "content": "Act as a literary editor, condensing the text while preserving its core narrative and essence."},
                 {"role": "user", "content": condense_prompt}
