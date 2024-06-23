@@ -3,9 +3,7 @@ import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 import openai
 
-openai.api_key = st.secrets["API_KEY_Fabio"]
-st.title(st.secrets["API_KEY_Fabio"])
-
+openai.api_key = st.secrets["API_KEY"]
 # Set your OpenAI API key
 
 
