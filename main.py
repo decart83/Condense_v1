@@ -1,9 +1,10 @@
 import os
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
-from openai import OpenAI
+import openai
 
-os.environ['OPENAI_API_KEY'] = st.secrets["API_KEY_Fabio"]
+openai.api_key = st.secrets["API_KEY_Fabio"]
+
 client = OpenAI()
 
 # Set your OpenAI API key
