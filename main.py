@@ -4,7 +4,6 @@ from langchain_core.messages import HumanMessage, AIMessage
 from openai import OpenAI
 
 os.environ['OPENAI_API_KEY'] = st.secrets["API_KEY"]
-st.title(st.secrets["API_KEY"])
 client = OpenAI()
 
 # Set your OpenAI API key
