@@ -28,7 +28,7 @@ st.text("")
 text_length = slider_amount_of_time * 1500
 
 
-pre_text = "The book title is " + str(topic) + ". The desired reading time is" + str(slider_amount_of_time) + " minutes"
+pre_text = "The book title is " + str(topic) + ". The desired reading time is" + str(slider_amount_of_time) + " minutes. "
 
 #condense_prompt = "Please provide a highlighted summary of Chapter 1 from " + str(topic) + ". Verify that the book’s copyright has expired based on the applicable laws (typically life of the author plus 70 years, but confirm according to the relevant jurisdiction). Adjust the number of quotes to fit a word count of approximately 1000-1500 words. Review the entire chapter to ensure a comprehensive summary, using only direct quotes from the text. Ensure the summary includes key points and essential information. Add contextual details to ensure smooth transitions between quotes, and focus on key dialogues that drive the plot forward. Use longer passages from the text, focusing on entire paragraphs or sequences of dialogue rather than isolated quotes. Include descriptive passages to provide more content without deviating from the narrative."
 condense_prompt = "Summarize the book " + str(topic) + " in " + str(text_length) + "characters. Try to return exactly " + str(text_length) + "characters."
@@ -41,7 +41,7 @@ if st.button('Condense It!'):
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "Act as a literary editor, condensing the text while preserving its core narrative and essence."},
-                {"role": "user", "content": condense_prompt}
+                {"role": "user", "content": pre_text+condense_prompt}
             ],
             max_tokens=4096,
             temperature=0.2)
