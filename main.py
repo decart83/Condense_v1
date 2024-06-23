@@ -40,7 +40,7 @@ if st.button('Condense It!'):
         result = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system", "content": "Act as a literary editor, condensing the text while preserving its core narrative and essence."},
                 {"role": "user", "content": condense_prompt}
             ],
             max_tokens=4096,
