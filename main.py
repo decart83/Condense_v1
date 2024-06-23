@@ -44,7 +44,7 @@ if st.button('Condense It!'):
                 {"role": "user", "content": condense_prompt}
             ],
             max_tokens=4096,
-            temperature=0.7)
+            temperature=0.2)
         response = result.choices[0].message.content
 
     with st.chat_message('AI'):
