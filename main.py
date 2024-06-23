@@ -18,7 +18,7 @@ if "chat_history" not in st.session_state:
 st.text("")
 topic = st.selectbox(
     "What do you want to learn?",
-    ("Pride & Prejudice", "New England Trees", "The Story of the Heavens", "Yeast", "Romeo & Juliet", "Susan B. Anthony by Alma Lutz"))
+    ("Swan’s Way by Marcel Proust in English", "Pride & Prejudice", "New England Trees", "The Story of the Heavens", "Yeast", "Romeo & Juliet", "Susan B. Anthony by Alma Lutz"))
 
 st.text("")
 slider_amount_of_time = st.slider("How much time would you like to spend?", 10, 120, 10, 10)
